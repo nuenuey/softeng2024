@@ -5,7 +5,7 @@
 def main():
     dan=5
     print("구구단을 출력합니다.")
-    with open("gugudan.html", "w") as f:
+    with open("gugudan.html", "w") as f: # html파일을 만듦
         f.write("<html>\n")
 
         for j in range(1,10):
