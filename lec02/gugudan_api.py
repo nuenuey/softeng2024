@@ -4,7 +4,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/") # 127.0.0.1:5000 일때 구구단나옴
 def hello():
     html_str = """
 
@@ -37,7 +37,7 @@ def say_hello(name):
     return f"안녕하세요! {escape(name)}님."
 
 
-@app.route("/dan/<dan>")
+@app.route("/dan/<dan>") # 뒤에 <dan>에 따라 다름
 def gugudan_html(dan):
     html_str = ""
     for j in range(1, 10):
@@ -45,7 +45,7 @@ def gugudan_html(dan):
     return html_str
 
 
-@app.route("/gugudan/")
+@app.route("/gugudan/") #바로 2단나옴
 def gugudan_arg_html():
     dan = request.args.get("dan", "2")
     html_str = ""
